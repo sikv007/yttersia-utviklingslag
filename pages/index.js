@@ -1,7 +1,8 @@
 import { Header } from '../components/Layout';
 import { Map } from '../components/Map';
+import { client } from '../utils/config';
 
-const App = () => {
+const App = ({ data }) => {
   return (
     <>
       <div>
@@ -25,10 +26,20 @@ const App = () => {
             </p>
           </div>
         </section>
-        <Map />
+        <Map data={data} />
       </div>
     </>
   );
 };
 
 export default App;
+
+export async function getStaticProps(context) {
+  const data = await client.fetch("*[_type == 'map']");
+
+  return {
+    props: {
+      data,
+    },
+  };
+}

@@ -6,7 +6,7 @@ export const useMap = (data) => {
   const [error, setError] = useState('');
 
   const loader = new Loader({
-    apiKey: 'AIzaSyCPXaEmaxq69ghFQ5YRkWNGWErSWloCVsg',
+    apiKey: process.env.NEXT_PUBLIC_API_KEY,
     version: 'weekly',
     libraries: ['places'],
     // mapTypeControl: false

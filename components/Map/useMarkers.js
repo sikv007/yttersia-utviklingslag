@@ -7,7 +7,7 @@ export const useMarkers = (map, data) => {
       let text;
       let fillColor;
 
-      switch (item.type) {
+      switch (item.category) {
         case 'hotel':
           text = '\ue53a';
           fillColor = '#6b21a8';
