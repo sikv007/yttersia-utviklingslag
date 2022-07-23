@@ -26,6 +26,11 @@ const data = [
     position: { lat: 69.63431555923414, lng: 18.005016853855956 },
     type: 'store',
   },
+  {
+    name: 'Austein Drivstoff',
+    position: { lat: 69.60041871972474, lng: 18.043887510527025 },
+    type: 'gas',
+  },
 ];
 
 export const Map = () => {
@@ -37,7 +42,7 @@ export const Map = () => {
 
   return (
     <div>
-      <div id='map' className='h-[500px]'></div>;
+      <div id='map' className='h-[500px]'></div>
     </div>
   );
 };

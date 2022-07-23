@@ -19,6 +19,10 @@ export const useMarkers = (map, data) => {
         case 'camping':
           text = '\uea99';
           fillColor = '#0d9488';
+          break;
+        case 'gas':
+          text = '\ue546';
+          fillColor = '#52525b';
       }
 
       const svgMarker = {
