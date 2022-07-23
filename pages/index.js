@@ -1,19 +1,11 @@
+import { Header } from '../components/Layout';
 import { Map } from '../components/Map';
 
 const App = () => {
   return (
     <>
       <div>
-        <header className='h-[400px] tablet-m:h-[600px] bg-[url(../public/hero.webp)] bg-fixed bg-cover bg-bottom'>
-          <div className='w-full h-full bg-gradient-to-t from-indigo-900 to-transparent p-XL shadow-lg rounded-lg text-center flex items-center justify-center'>
-            <div className='w-[90%] tablet-m:w-[50%] backdrop-blur-lg shadow-lg p-2XL rounded-md'>
-              <h1 className='text-golf tablet-m:text-juliet font-black text-white backdrop-blur-sm mb-XL'>
-                Brensholmen, Sommarøy, Hillesøy, Greipstad, Buvik.
-              </h1>
-              <hr className='w-[30%] mx-auto' />
-            </div>
-          </div>
-        </header>
+        <Header />
         <section>
           <div className='container py-XL tablet-m:py-3XL text-center'>
             <h2 className='mb-S font-bold text-foxtrot'>
