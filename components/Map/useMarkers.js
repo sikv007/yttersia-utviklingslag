@@ -7,9 +7,14 @@ export const useMarkers = (map, data) => {
       let text;
       let fillColor;
 
-      if (item.type === 'hotel') {
-        text = 'H';
-        fillColor = '#6b21a8';
+      switch (item.type) {
+        case 'hotel':
+          text = '\ue53a';
+          fillColor = '#6b21a8';
+          break;
+        case 'store':
+          text = '\ue547';
+          fillColor = '#4338ca';
       }
 
       const svgMarker = {
@@ -17,6 +22,7 @@ export const useMarkers = (map, data) => {
         fillColor,
         fillOpacity: 1,
         strokeWeight: 0,
+        scale: 0.9,
         labelOrigin: new google.maps.Point(0, -29),
       };
 
@@ -25,7 +31,8 @@ export const useMarkers = (map, data) => {
         map,
         icon: svgMarker,
         label: {
-          text,
+          text, // codepoint from https://fonts.google.com/icons
+          fontFamily: 'Material Icons',
           color: '#FFF',
           fontSize: '20px',
         },
