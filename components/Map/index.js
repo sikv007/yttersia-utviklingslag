@@ -16,6 +16,16 @@ const data = [
     position: { lat: 69.63556189120732, lng: 17.99183019505864 },
     type: 'hotel',
   },
+  {
+    name: 'Camping',
+    position: { lat: 69.63651652647917, lng: 18.005260090709502 },
+    type: 'camping',
+  },
+  {
+    name: 'Matkroken',
+    position: { lat: 69.63431555923414, lng: 18.005016853855956 },
+    type: 'store',
+  },
 ];
 
 export const Map = () => {

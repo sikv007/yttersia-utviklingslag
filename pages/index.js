@@ -15,7 +15,7 @@ const App = () => {
         </header>
         <Map />
         <section>
-          <div className='container text-charlie'>
+          <div className='container text-charlie py-2XL'>
             <p className='mb-S'>
               Velkommen til nettsiden til Utviklingslaget på Yttersia.
             </p>

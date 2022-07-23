@@ -15,6 +15,10 @@ export const useMarkers = (map, data) => {
         case 'store':
           text = '\ue547';
           fillColor = '#4338ca';
+          break;
+        case 'camping':
+          text = '\uea99';
+          fillColor = '#0d9488';
       }
 
       const svgMarker = {
@@ -26,7 +30,7 @@ export const useMarkers = (map, data) => {
         labelOrigin: new google.maps.Point(0, -29),
       };
 
-      new google.maps.Marker({
+      const marker = new google.maps.Marker({
         position: item.position,
         map,
         icon: svgMarker,
@@ -36,6 +40,18 @@ export const useMarkers = (map, data) => {
           color: '#FFF',
           fontSize: '20px',
         },
+      });
+
+      const infowindow = new google.maps.InfoWindow({
+        content: `<h1 class="font-black text-delta">${item.name}</h1>`,
+      });
+
+      marker.addListener('click', () => {
+        infowindow.open({
+          anchor: marker,
+          map,
+          shouldFocus: false,
+        });
       });
     });
   }, [map]);
