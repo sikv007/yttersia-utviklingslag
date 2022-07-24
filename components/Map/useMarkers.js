@@ -23,6 +23,27 @@ export const useMarkers = (map, data) => {
         case 'gas':
           text = '\ue546';
           fillColor = '#52525b';
+          break;
+        case 'toilet':
+          text = '\ue63d';
+          fillColor = '#1e40af';
+          break;
+        case 'parking':
+          text = '\ue54f';
+          fillColor = '#2563eb';
+          break;
+        case 'trash':
+          text = '\ue760';
+          fillColor = '#047857';
+          break;
+        case 'tour':
+          text = '\ue564';
+          fillColor = '#4d7c0f';
+          break;
+        case 'bus':
+          text = '\ue564';
+          fillColor = '#4d7c0f';
+          break;
       }
 
       const svgMarker = {
@@ -46,8 +67,37 @@ export const useMarkers = (map, data) => {
         },
       });
 
+      let contentHTML = '';
+
+      if (item.content) {
+        contentHTML = item.content
+          .map(({ style, children }) => {
+            let childElements;
+            switch (style) {
+              case 'h3':
+                childElements = children
+                  .map((child) => `${child.text}`)
+                  .join('');
+                return `<h3 class="font-bold text-bravo">${childElements}</h3>`;
+              case 'normal':
+                console.log(children);
+                childElements = children
+                  .map((child) => {
+                    if (child.marks[0] === 'strong')
+                      return `<strong class="font-bold">${child.text}</strong>`;
+                    return `${child.text}`;
+                  })
+                  .join('');
+                return `<p class="text-alfa mb-2XS">${childElements}</p>`;
+            }
+          })
+          .join('\n');
+      }
+
+      console.log(contentHTML);
+
       const infowindow = new google.maps.InfoWindow({
-        content: `<h1 class="font-black text-delta">${item.name}</h1>`,
+        content: `<h1 class="font-black text-charlie">${item.name}</h1> ${contentHTML}`,
       });
 
       marker.addListener('click', () => {
