@@ -41,8 +41,12 @@ export const useMarkers = (map, data) => {
           fillColor = '#4d7c0f';
           break;
         case 'bus':
-          text = '\ue564';
-          fillColor = '#4d7c0f';
+          text = '\ue530';
+          fillColor = '#b91c1c';
+          break;
+        case 'ferry':
+          text = '\ue532';
+          fillColor = '#d97706';
           break;
       }
 
@@ -51,7 +55,7 @@ export const useMarkers = (map, data) => {
         fillColor,
         fillOpacity: 1,
         strokeWeight: 0,
-        scale: 0.9,
+        scale: 0.8,
         labelOrigin: new google.maps.Point(0, -29),
       };
 
@@ -63,7 +67,7 @@ export const useMarkers = (map, data) => {
           text, // codepoint from https://fonts.google.com/icons
           fontFamily: 'Material Icons',
           color: '#FFF',
-          fontSize: '20px',
+          fontSize: '19px',
         },
       });
 
