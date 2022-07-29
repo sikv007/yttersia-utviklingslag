@@ -31,7 +31,7 @@ const myPortableTextComponents = {
     h3: ({ children }) => (
       <h3 className='text-charlie mb-XS text-grey-9'>{children}</h3>
     ),
-    normal: ({ children }) => <p className='mb-XS text-grey-9'>{children}</p>,
+    normal: ({ children }) => <p className='mb-XS text-bravo text-grey-9'>{children}</p>,
   },
   marks: {
     link: ({ value, children }) => {
@@ -49,7 +49,7 @@ const myPortableTextComponents = {
 const Page = ({ data }) => {
   console.log(data);
   return (
-    <div className='bg-grey-2'>
+    <div className='bg-grey-3'>
       <div className='container py-XL'>
         <Heading>{data.name}</Heading>
         <PortableText

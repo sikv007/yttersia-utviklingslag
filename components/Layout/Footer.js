@@ -2,7 +2,7 @@ import { A } from '../Elements';
 
 export const Footer = () => {
   return (
-    <footer className='bg-white px-3XL pt-XL pb-L text-center'>
+    <footer className='bg-white pt-XL pb-L text-center'>
       <h2 className='mb-S font-medium text-echo'>Kontaktinformasjon</h2>
       <div className='grid grid-cols-1 gap-XS mb-XL'>
         <A
