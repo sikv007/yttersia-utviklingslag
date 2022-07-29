@@ -1,7 +1,9 @@
+import Image from 'next/image';
 import { Heading } from '../components/Elements';
 import { Header } from '../components/Layout';
 import { Map } from '../components/Map';
 import { client } from '../utils/config';
+import yttersia from '../public/yttersia/yttersia_2.webp';
 
 const App = ({ data }) => {
   return (
@@ -9,8 +11,8 @@ const App = ({ data }) => {
       <div>
         <Header />
         <section className='bg-grey-2'>
-          <div className='container py-XL tablet-m:py-3XL text-center text-grey-9 tablet-m:text-charlie'>
-            <div className='tablet-m:w-[90%] tablet-m:mx-auto'>
+          <div className='container py-XL tablet-m:py-3XL grid grid-cols-1 tablet-m:grid-cols-2 gap-L text-grey-9 tablet-m:text-charlie'>
+            <div className=''>
               <Heading>
                 Velkommen til nettsiden til Utviklingslaget på Yttersia.
               </Heading>
@@ -21,11 +23,20 @@ const App = ({ data }) => {
                 minst oversikt over lokaler og utstyr man kan leie til privat
                 bruk!
               </p>
-              <p className='mb-2XL'>
+              <p className='mb-S'>
                 Vi håper dere finner denne siden nyttig. Om det er informasjon
                 dere føler mangler eller har forslag til forbedringer er det
                 bare å ta kontakt med oss.
               </p>
+            </div>
+            <div>
+              <Image
+                src={yttersia.src}
+                alt='Some alt'
+                width='900'
+                height='600'
+                className='rounded-lg shadow-sm'
+              />
             </div>
           </div>
         </section>
