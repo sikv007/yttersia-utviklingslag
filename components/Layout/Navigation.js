@@ -27,11 +27,6 @@ export const Navigation = () => {
       </div>
       <ul className='flex flex-col justify-center items-center pt-L gap-M'>
         <li>
-          <NavLink href='/nyheter' className='text-primary'>
-            Nyheter
-          </NavLink>
-        </li>
-        <li>
           <NavLink href='/kontakt' className='text-primary'>
             Kontakt
           </NavLink>
@@ -61,11 +56,6 @@ export const Navigation = () => {
         {isVisible && createPortal(mobileNav, document.querySelector('body'))}
 
         <ul className='hidden tablet-m:flex items-center gap-M'>
-          <li>
-            <NavLink href='/nyheter' className='text-primary'>
-              Nyheter
-            </NavLink>
-          </li>
           <li>
             <NavLink href='/kontakt' className='text-primary'>
               Kontakt
